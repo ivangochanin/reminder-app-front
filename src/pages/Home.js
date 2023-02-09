@@ -2,18 +2,12 @@ import React from 'react';
 import styled from 'styled-components';
 import { breakpoint, color } from '../configs/utilities';
 import { ViewWrapper } from '../components/common/wrappers/Wrappers';
-import PageHead from '../components/common/wrappers/PageHead';
 
 const Home = () => {
 	return (
-		<PageWrapper>
+		<HomeWrapper>
 			<ViewWrapper>
 				<Wrapper>
-					<PageHead
-						title="Dashboard with:"
-						to="/reminders"
-						buttonText="SEE ALL REMINDERS"
-					/>
 					<ul>
 						<li>Data Grid Visualization</li>
 						<li>Charts</li>
@@ -24,13 +18,16 @@ const Home = () => {
 					</ul>
 				</Wrapper>
 			</ViewWrapper>
-		</PageWrapper>
+		</HomeWrapper>
 	);
 };
 
 export default Home;
 
-const PageWrapper = styled.div`
+const HomeWrapper = styled.div`
+	width: 90%;
+	max-width: 1536px;
+	margin: 0 auto;
 	@media screen and (min-width: ${breakpoint.xl}) {
 		background: ${color.white};
 	}

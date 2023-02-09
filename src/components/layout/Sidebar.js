@@ -39,8 +39,8 @@ export default Sidebar;
 
 const Wrapper = styled.div`
 	width: 100%;
-	height: 95vh;
-	background: ${color.blue};
+	height: calc(100% - 50px);
+	background: ${color.white};
     padding: 30px 30px;
   
 .active {
@@ -48,7 +48,7 @@ const Wrapper = styled.div`
 }
 
   a {
-    color: ${color.white};
+    color: ${color.black};
 	display: flex;
 	align-items: center;
 	column-gap: 10px;
