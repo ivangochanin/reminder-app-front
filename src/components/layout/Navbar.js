@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { color } from '../../configs/utilities';
 import { NavLink } from 'react-router-dom';
 import axios from 'axios';
-import home from '../../assets/logo.jpg'
+import home from '../../assets/logo.jpg';
 
 const Navbar = () => {
 	const url = process.env.REACT_APP_API_URL;
@@ -56,12 +56,12 @@ const Content = styled.div`
 	justify-content: space-between;
 	align-items: center;
 	text-align: center;
-	font-size: 14px;
+	font-size: 16px;
 	font-weight: 300;
 
 	.active {
-    color: ${color.yellow};
-}
+		color: ${color.yellow};
+	}
 	a {
 		color: ${color.white};
 		display: flex;

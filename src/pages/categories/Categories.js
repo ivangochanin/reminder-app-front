@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
-import { NavLink, Outlet } from 'react-router-dom';
+import { Outlet } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
+import Accordion from '../../components/common/ui/Accordion';
 
 const Categories = () => {
 	const url = process.env.REACT_APP_API_URL;
@@ -28,16 +29,9 @@ const Categories = () => {
 	return (
 		<ViewWrapper>
 			<SidebarWrapper>
-				<p>{slug}</p>
+				<h1>{slug}</h1>
 				{subCategories.map((item, index) => (
-					<div key={index}>
-						<span>{item.name}</span>
-						{item.reminders.map((item, index) => (
-							<NavLink to={`${item.slug}`} key={index}>
-								{item.name}
-							</NavLink>
-						))}
-					</div>
+					<Accordion index={index} item={item} />
 				))}
 			</SidebarWrapper>
 
@@ -61,6 +55,12 @@ const SidebarWrapper = styled.div`
 	width: 300px;
 	display: flex;
 	flex-direction: column;
+	row-gap: 20px;
+	padding-top: 50px;
+	text-align: center;
+	h1 {
+		text-transform: capitalize;
+	}
 `;
 const ReminderWrapper = styled.div`
 	width: calc(100% - 300px);
