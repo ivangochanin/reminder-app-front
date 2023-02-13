@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import styled from 'styled-components';
@@ -9,12 +9,12 @@ const Reminder = () => {
 	const { reminderSlug } = useParams();
 	const [reminder, setReminder] = useState([]);
 
+	const ref = useRef(null)
+
 	useEffect(() => {
-		document.querySelectorAll('.code').forEach((el) => {
-			el.querySelectorAll('pre').forEach((el) => {
-				highlight.highlightElement(el)
-			})
-		});
+		ref.current.querySelectorAll('pre').forEach((el) => {
+			highlight.highlightElement(el)
+		})
 	});
 
 	const getReminders = async () => {
@@ -33,11 +33,7 @@ const Reminder = () => {
 
 	return (
 		<Wrapper>
-			{/* <Highlight innerHTML={true} language="javascript">
-				{reminder.content}
-			</Highlight> */}
-			<div className="code" dangerouslySetInnerHTML={{ __html: reminder.content }}></div>
-			{/*<Highlight language="javascript" className="code" >{reminder.content}</Highlight>*/}
+			<div className="code" ref={ref} dangerouslySetInnerHTML={{ __html: reminder.content }}></div>
 		</Wrapper>
 	);
 };
