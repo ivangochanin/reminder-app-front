@@ -33,7 +33,7 @@ const Reminder = () => {
 
 	return (
 		<Wrapper>
-			<div className="code" ref={ref} dangerouslySetInnerHTML={{ __html: reminder.content }}></div>
+			<div ref={ref} dangerouslySetInnerHTML={{ __html: reminder.content }}></div>
 		</Wrapper>
 	);
 };
