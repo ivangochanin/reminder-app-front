@@ -31,7 +31,7 @@ const Categories = () => {
 			<SidebarWrapper>
 				<h1>{slug}</h1>
 				{subCategories.map((item, index) => (
-					<Accordion index={index} item={item} />
+					<Accordion key={index} item={item} />
 				))}
 			</SidebarWrapper>
 
