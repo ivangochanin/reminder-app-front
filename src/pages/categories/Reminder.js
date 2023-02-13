@@ -11,10 +11,11 @@ const Reminder = () => {
 	const [reminder, setReminder] = useState([]);
 
 	const ref = useRef(null)
-
+    
+	
 	useEffect(() => {
 		ref.current.querySelectorAll('pre').forEach((el) => {
-			el.classList.add('language-javascript');
+			el.classList.add(`language-${reminder.language}`);
 			highlight.highlightElement(el)
 		})
 	});

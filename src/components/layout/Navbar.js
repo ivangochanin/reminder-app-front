@@ -62,6 +62,7 @@ const Content = styled.div`
 	.active {
 		color: ${color.yellow};
 	}
+	
 	a {
 		color: ${color.white};
 		display: flex;

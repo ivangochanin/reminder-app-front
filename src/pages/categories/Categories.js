@@ -4,6 +4,7 @@ import { Outlet } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import Accordion from '../../components/common/ui/Accordion';
+import { color } from '../../configs/utilities'
 
 const Categories = () => {
 	const url = process.env.REACT_APP_API_URL;
@@ -30,9 +31,9 @@ const Categories = () => {
 		<ViewWrapper>
 			<SidebarWrapper>
 				<h1>{slug}</h1>
-				{subCategories.map((item, index) => (
-					<Accordion key={index} item={item} />
-				))}
+				{subCategories.map((item, index) =>
+					item.reminders.length ? <Accordion key={index} item={item} /> : null
+				)}
 			</SidebarWrapper>
 
 			<ReminderWrapper>
@@ -60,6 +61,14 @@ const SidebarWrapper = styled.div`
 	text-align: center;
 	h1 {
 		text-transform: capitalize;
+	}
+
+	a {
+		color: ${color.black};
+
+	}
+	.active {
+		color: ${color.yellow};
 	}
 `;
 const ReminderWrapper = styled.div`
