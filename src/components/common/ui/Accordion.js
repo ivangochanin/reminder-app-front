@@ -19,7 +19,7 @@ const Accordion = (props) => {
 				key={props.index}
 				trigger={<Trigger>{props.item.name}</Trigger>}
 				transitionTime={100}
-				open={testTrigger ? true : false}
+				open={!!testTrigger} // === testTrigger ? true : false
 			>
 				<AllLinks>
 					{props.item.reminders.map((item, index) => (
