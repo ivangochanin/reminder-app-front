@@ -10,7 +10,7 @@ export const breakpoint = {
 
 export const color = {
   white: '#ffffff',
-  black: '#24292F',
+  black: '#2b324a',
   blackDark: '#000000',
   silver: '#eeeeee',
   gray: '#BFBDBD',
