@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import styled from 'styled-components';
 import highlight from 'highlight.js'
+import { color } from '../../configs/utilities'
 
 const Reminder = () => {
 	const url = process.env.REACT_APP_API_URL;
@@ -43,4 +44,8 @@ export default Reminder;
 
 const Wrapper = styled.div`
 	padding: 50px;
+    color: ${color.black};
+	h1 {
+      font-size: 40px;
+	}
 `;
