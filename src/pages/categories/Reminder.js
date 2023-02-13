@@ -13,6 +13,7 @@ const Reminder = () => {
 
 	useEffect(() => {
 		ref.current.querySelectorAll('pre').forEach((el) => {
+			el.classList.add('language-javascript');
 			highlight.highlightElement(el)
 		})
 	});
