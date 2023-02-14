@@ -4,6 +4,7 @@ import { color } from '../../configs/utilities';
 import { NavLink } from 'react-router-dom';
 import axios from 'axios';
 import home from '../../assets/logo.jpg';
+import Search from '../common/search/Search';
 
 const Navbar = () => {
 	const url = process.env.REACT_APP_API_URL;
@@ -34,6 +35,7 @@ const Navbar = () => {
 						<span>{item.name}</span>
 					</NavLink>
 				))}
+				<Search/>
 			</Content>
 		</Wrapper>
 	);
