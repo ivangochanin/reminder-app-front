@@ -1,4 +1,9 @@
 @import "../../node_modules/highlight.js/styles/atom-one-dark.css";
+
 // Base
 @import "base/base";
 @import "base/utilities";
+
+// Plugins
+@import "plugins/codeHighlight";
+

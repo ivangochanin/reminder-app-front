@@ -7,15 +7,13 @@ import { Link } from 'react-router-dom';
 const Error = () => {
 	return (
 		<PageWrapper>
-		
-				<Wrapper>
-					<BiCommentError className="icon" size={'200px'} />
-					<h1>Page Not Found !</h1>
-					<Link to="/">
-						<Button>Go Home</Button>
-					</Link>
-				</Wrapper>
-		
+			<Wrapper>
+				<BiCommentError className="icon" size={'200px'} />
+				<h1>Page Not Found !</h1>
+				<Link to="/">
+					<Button>Go Home</Button>
+				</Link>
+			</Wrapper>
 		</PageWrapper>
 	);
 };
