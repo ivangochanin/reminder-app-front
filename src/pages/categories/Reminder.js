@@ -48,5 +48,24 @@ const Wrapper = styled.div`
     color: ${color.black};
 	h1 {
       font-size: 40px;
+	  font-family: 'Playfair Display', serif;
+	  font-family: 'Arvo', serif;
+	  font-weight: 400;
+	}
+	pre {
+		margin-top: 50px;
+	}
+
+	img {
+		margin: 20px auto;
+		display: flex;
+	}
+
+	a {
+		color: blue;
+	}
+
+	p {
+		line-height: 25px;
 	}
 `;

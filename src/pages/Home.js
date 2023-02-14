@@ -26,7 +26,7 @@ export default Home;
 
 const HomeWrapper = styled.div`
 	width: 90%;
-	max-width: 1536px;
+	max-width: 1440px;
 	margin: 0 auto;
 	@media screen and (min-width: ${breakpoint.xl}) {
 		background: ${color.white};

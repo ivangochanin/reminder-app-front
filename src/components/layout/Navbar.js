@@ -50,14 +50,14 @@ const Wrapper = styled.div`
 const Content = styled.div`
 	min-height: 50px;
 	width: 90%;
-	max-width: 1536px;
+	max-width: 1440px;
 	margin: 0 auto;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	text-align: center;
 	font-size: 16px;
-	font-weight: 300;
+	font-weight: 500;
 
 	.active {
 		color: ${color.yellow};
