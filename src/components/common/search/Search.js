@@ -5,6 +5,8 @@ import TextField from '@mui/material/TextField';
 import Autocomplete from '@mui/material/Autocomplete';
 import CircularProgress from '@mui/material/CircularProgress';
 import axios from 'axios';
+import InputAdornment from '@mui/material/InputAdornment';
+import { FaSearch } from 'react-icons/fa'
 
 const Search = () => {
 	const url = process.env.REACT_APP_API_URL;
@@ -36,7 +38,6 @@ const Search = () => {
 	/* const [options, setOptions] = useState([]); */
 	const loading = open && reminders.length === 0;
 
-
 	useEffect(() => {
 		let active = true;
 	
@@ -67,7 +68,7 @@ const Search = () => {
     <Wrapper>
          <Autocomplete
       id="asynchronous-demo"
-      sx={{ width: 200 }}
+      sx={{ width: 200, input: { color: 'red', background: 'blue' }}}
       open={open}
       onOpen={() => {
         setOpen(true);
@@ -83,8 +84,16 @@ const Search = () => {
         <TextField
           {...params}
           label="Asynchronous"
+		  variant="filled"
+		  color="success" 
+		  focused
           InputProps={{
             ...params.InputProps,
+			startAdornment: (
+				<InputAdornment position="start">
+				  <FaSearch />
+				</InputAdornment>
+			  ),
             endAdornment: (
               <React.Fragment>
                 {loading ? <CircularProgress color="inherit" size={20} /> : null}
