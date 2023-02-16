@@ -1,21 +1,21 @@
 import React from 'react';
 import styled from 'styled-components';
 import { color } from '../../../configs/utilities';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 const SearchResults = ({ items, onSelect }) => {
 	return (
 		<Wrapper>
 			{items.map((item, index) => (
 				<li key={index} onClick={() => onSelect(item)}>
-					<Link to={`${item.subcategory.category.slug}/${item.slug}`}>
+					<NavLink to={`${item.subcategory.category.slug}/${item.slug}`}>
 						<span>{item.name}</span>
 						<Details>
 							<span>{item.subcategory.category.name}</span>
 							<span>/</span>
 							<span>{item.subcategory.name}</span>
 						</Details>
-					</Link>
+					</NavLink>
 				</li>
 			))}
 		</Wrapper>
