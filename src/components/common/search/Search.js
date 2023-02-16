@@ -6,7 +6,8 @@ import Autocomplete from '@mui/material/Autocomplete';
 import CircularProgress from '@mui/material/CircularProgress';
 import axios from 'axios';
 import InputAdornment from '@mui/material/InputAdornment';
-import { FaSearch } from 'react-icons/fa'
+/* import { FaSearch } from 'react-icons/fa' */
+import { NavLink } from 'react-router-dom';
 
 const Search = () => {
 	const url = process.env.REACT_APP_API_URL;
@@ -21,9 +22,9 @@ const Search = () => {
 
 	const getReminders = async () => {
 		try {
-			const response = await axios.get(`${url}/reminders`);
-			setReminders(response.data.allReminders);
-            console.log(response.data.allReminders);
+			const response = await axios.get(`${url}/search?keyphrase=ButtonLink`);
+			setReminders(response.data);
+            console.log(response.data);
 		} catch (error) {
 			console.log(error);
 		}
@@ -68,7 +69,7 @@ const Search = () => {
     <Wrapper>
          <Autocomplete
       id="asynchronous-demo"
-      sx={{ width: 200, input: { color: 'red', background: 'blue' }}}
+      sx={{ width: 400, input: { color: 'red' }}}
       open={open}
       onOpen={() => {
         setOpen(true);
@@ -76,22 +77,26 @@ const Search = () => {
       onClose={() => {
         setOpen(false);
       }}
-      isOptionEqualToValue={(option, value) => option.title === value.title}
-      getOptionLabel={(option) => option.title}
+      isOptionEqualToValue={(option, value) => option._id === value._id}
+      /* getOptionLabel={(option, index) => {<NavLink key={index} to={`${option.subcategory.category.slug}/${option.slug}`} > {option.name} </NavLink>}} */
+      getOptionLabel={(option) => option.name}
+	  onInputChange={(e, value) => { 
+		console.log('e', e);
+		console.log('value', value);
+	  }}
       options={reminders}
       loading={loading}
       renderInput={(params) => (
         <TextField
           {...params}
-          label="Asynchronous"
+        /*   label="Asynchronous" */
 		  variant="filled"
 		  color="success" 
-		  focused
           InputProps={{
             ...params.InputProps,
 			startAdornment: (
 				<InputAdornment position="start">
-				  <FaSearch />
+				  {/* <FaSearch /> */}
 				</InputAdornment>
 			  ),
             endAdornment: (
@@ -111,7 +116,6 @@ const Search = () => {
 export default Search
 
 const Wrapper = styled.div`
-	width: 100%;
-	background: ${color.black};
-	color: ${color.white};
+	/* background: ${color.black};
+	color: ${color.white}; */
 `;

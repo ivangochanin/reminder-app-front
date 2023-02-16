@@ -45,8 +45,8 @@ export default Navbar;
 
 const Wrapper = styled.div`
 	width: 100%;
-	background: ${color.black};
-	color: ${color.white};
+	/* background: ${color.black};
+	color: ${color.white}; */
 `;
 
 const Content = styled.div`
@@ -66,7 +66,7 @@ const Content = styled.div`
 	}
 	
 	a {
-		color: ${color.white};
+		/* color: ${color.white}; */
 		display: flex;
 		align-items: center;
 		column-gap: 10px;
