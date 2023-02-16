@@ -50,7 +50,7 @@ const Wrapper = styled.div`
 `;
 
 const Content = styled.div`
-	min-height: 50px;
+	min-height: 65px;
 	width: 90%;
 	max-width: 1440px;
 	margin: 0 auto;

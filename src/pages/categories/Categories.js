@@ -61,6 +61,7 @@ const SidebarWrapper = styled.div`
 	text-align: center;
 	h1 {
 		text-transform: capitalize;
+		color: ${color.gray};
 	}
 
 	a {
