@@ -1,10 +1,12 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Home, Categories, Reminder, Error } from './pages';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Navbar from './components/layout/Navbar';
-import { showContainer } from './configs/animations';
 import styled from 'styled-components';
-import { LayoutWrapper } from './components/common/wrappers/Wrappers';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { showContainer } from './configs/animations';
+import { LayoutWrapper } from './components/utils/Wrappers';
+import Navbar from './components/layout/navbar/Navbar';
+import { Home, Reminders, Error } from './pages';
+import Reminder from './components/common/reminder/Reminder';
+
 function App() {
 	const [playAnimation, setPlayAnimation] = useState(false);
 	const containerContent = useRef(null);
@@ -32,7 +34,7 @@ function App() {
 				<AnimationWrapper ref={containerContent}>
 					<Routes>
 						<Route path="/" element={<Home />} exact={true} />
-						<Route path=":slug" element={<Categories />}>
+						<Route path=":slug" element={<Reminders />}>
 							<Route path=":reminderSlug" element={<Reminder />} />
 						</Route>
 						<Route path="*" element={<Error />} />

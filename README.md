@@ -1,8 +1,3 @@
-# react-app01
-
-
-
-
 ### START
 > nvm use 18
 

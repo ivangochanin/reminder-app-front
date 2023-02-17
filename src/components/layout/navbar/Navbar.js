@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
-import { color } from '../../configs/utilities';
+import { color } from '../../../configs/utilities';
 import { NavLink } from 'react-router-dom';
 import axios from 'axios';
-import home from '../../assets/logo.jpg';
-import Search from '../common/search/Search'
+import home from '../../../assets/logo.jpg';
+import Search from '../../common/search/Search'
 
 const Navbar = () => {
 	const url = process.env.REACT_APP_API_URL;
@@ -52,7 +52,7 @@ const Wrapper = styled.div`
 const Content = styled.div`
 	min-height: 65px;
 	width: 90%;
-	max-width: 1440px;
+	max-width: 1280px;
 	margin: 0 auto;
 	display: flex;
 	justify-content: space-between;

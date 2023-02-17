@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { breakpoint, color } from '../configs/utilities';
-import { ViewWrapper } from '../components/common/wrappers/Wrappers';
+import { ViewWrapper } from '../components/utils/Wrappers';
 
 const Home = () => {
 	return (
@@ -26,7 +26,7 @@ export default Home;
 
 const HomeWrapper = styled.div`
 	width: 90%;
-	max-width: 1440px;
+	max-width: 1280px;
 	margin: 0 auto;
 	@media screen and (min-width: ${breakpoint.xl}) {
 		background: ${color.white};

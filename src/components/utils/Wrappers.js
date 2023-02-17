@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { breakpoint } from '../../../configs/utilities';
+import { breakpoint } from '../../configs/utilities';
 
 export const LayoutWrapper = styled.div`
 	min-height: 90vh;

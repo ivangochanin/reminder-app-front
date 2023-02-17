@@ -11,10 +11,11 @@ const Accordion = (props) => {
 	const currentItems = props.item.reminders.map(item => {
 		return item.slug;
 	});
-	let testTrigger = currentItems.includes(reminderSlug);
+	
+	let trigger = currentItems.includes(reminderSlug);
 
 	useEffect(() => {
-		setIsCollapsable(testTrigger);
+		setIsCollapsable(trigger);
 	// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
 

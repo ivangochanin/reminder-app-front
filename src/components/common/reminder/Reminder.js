@@ -2,22 +2,21 @@ import React, { useState, useEffect, useRef } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import styled from 'styled-components';
-import highlight from 'highlight.js'
-import { color } from '../../configs/utilities'
+import highlight from 'highlight.js';
+import { color } from '../../../configs/utilities';
 
 const Reminder = () => {
 	const url = process.env.REACT_APP_API_URL;
 	const { reminderSlug } = useParams();
 	const [reminder, setReminder] = useState([]);
 
-	const ref = useRef(null)
-    
-	
+	const ref = useRef(null);
+
 	useEffect(() => {
 		ref.current.querySelectorAll('pre').forEach((el) => {
 			el.classList.add(`language-${reminder.language}`);
-			highlight.highlightElement(el)
-		})
+			highlight.highlightElement(el);
+		});
 	});
 
 	const getReminders = async () => {
@@ -35,9 +34,10 @@ const Reminder = () => {
 	}, [reminderSlug]);
 
 	return (
-		<Wrapper>
-			<div ref={ref} dangerouslySetInnerHTML={{ __html: reminder.content }}></div>
-		</Wrapper>
+		<Wrapper
+			ref={ref}
+			dangerouslySetInnerHTML={{ __html: reminder.content }}
+		></Wrapper>
 	);
 };
 
@@ -45,12 +45,10 @@ export default Reminder;
 
 const Wrapper = styled.div`
 	padding: 50px;
-    color: ${color.black};
+	color: ${color.black};
 	h1 {
-      font-size: 40px;
-	  font-family: 'Playfair Display', serif;
-	  font-family: 'Arvo', serif;
-	  font-weight: 400;
+		font-size: 40px;
+		font-weight: 400;
 	}
 	pre {
 		margin-top: 50px;
