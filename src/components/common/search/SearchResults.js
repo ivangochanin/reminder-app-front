@@ -12,7 +12,6 @@ const SearchResults = ({ items, onSelect }) => {
 						<span>{item.name}</span>
 						<Details>
 							<span>{item.subcategory.category.name}</span>
-							<span>/</span>
 							<span>{item.subcategory.name}</span>
 						</Details>
 					</NavLink>
@@ -38,6 +37,7 @@ const Wrapper = styled.ul`
 	z-index: 999999999;
 	border-bottom-right-radius: 4px;
 	border-bottom-left-radius: 4px;
+	font-family: 'Roboto Mono', monospace;
 
 	li {
 		margin: 15px 0;

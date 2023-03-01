@@ -58,7 +58,7 @@ const Content = styled.div`
 	justify-content: space-between;
 	align-items: center;
 	text-align: center;
-	font-size: 16px;
+	font-size: 15px;
 	font-weight: 500;
 
 	.active {

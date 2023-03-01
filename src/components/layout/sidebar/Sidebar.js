@@ -17,20 +17,21 @@ const Sidebar = (props) => {
 export default Sidebar;
 
 const Wrapper = styled.div`
-	width: 300px;
 	display: flex;
 	flex-direction: column;
 	row-gap: 20px;
-	padding-top: 50px;
+
 	text-align: center;
-	
+
 	h1 {
 		text-transform: capitalize;
 		color: ${color.gray};
 	}
 
 	a {
+		font-family: 'Roboto Mono', monospace;
 		color: ${color.black};
+		font-size: 14px;
 	}
 
 	.active {

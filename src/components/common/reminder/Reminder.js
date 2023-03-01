@@ -44,7 +44,7 @@ const Reminder = () => {
 export default Reminder;
 
 const Wrapper = styled.div`
-	padding: 50px;
+	padding: 0 50px;
 	color: ${color.black};
 	h1 {
 		font-size: 40px;

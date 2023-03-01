@@ -27,6 +27,7 @@ export default SearchInput;
 
 const Wrapper = styled.div`
 	input {
+		font-family: 'Roboto Mono', monospace;
 		border: 1px solid ${color.blackBorder};
 		outline: none;
 		min-width: 400px;

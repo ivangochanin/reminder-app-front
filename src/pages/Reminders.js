@@ -45,12 +45,13 @@ const ViewWrapper = styled.div`
 	max-width: 1280px;
 	margin: 0 auto;
 	display: flex;
+	padding-top: 50px;
 `;
 
 const SidebarWrapper = styled.div`
-	width: 300px;
+	width: 250px;
 `;
 
 const ReminderWrapper = styled.div`
-	width: calc(100% - 300px);
+	width: calc(100% - 250px);
 `;
