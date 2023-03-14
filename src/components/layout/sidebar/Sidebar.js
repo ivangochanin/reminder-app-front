@@ -4,13 +4,13 @@ import AccordionCustom from '../../common/accordion/AccordionCustom';
 import { color } from '../../../configs/utilities';
 import { showContainer } from '../../../configs/animations';
 import { useParams } from 'react-router-dom';
+import { findIndex } from 'lodash';
 
 const Sidebar = (props) => {
 	const containerContent = useRef(null);
 	const [isCollapsable, setIsCollapsable] = useState([]);
-/* 	const { slug } = useParams(); */
+	const { reminderSlug, subcategorySlug } = useParams();
 
-	console.log(useParams());
 	useEffect(() => {
 		if (props.loading) {
 			containerContent.current.style.visibility = 'hidden';
@@ -20,19 +20,28 @@ const Sidebar = (props) => {
 		}
 	}, [props.loading]);
 
-	const updateIndex = (index) => {
+	const updateIndex = (index, value = null) => {
 		let copyInitialState = [...isCollapsable];
 		let item = isCollapsable[index];
 		item = !item;
-		copyInitialState[index] = item;
+		copyInitialState[index] = value ? value :item;
 		setIsCollapsable(copyInitialState);
 	};
 
 	useEffect(() => {
-	    const itemsArray = props.subCategories.map(() => {
+		const itemsArray = props.subCategories.map(() => {
 			return false;
 		});
+
 		setIsCollapsable(itemsArray);
+
+		if (reminderSlug) {
+			const index = findIndex( props.subCategories, ['slug', subcategorySlug])
+			if (index !== -1) {
+				updateIndex(index, true)
+			}
+		}
+
 	}, [props.subCategories]);
 
 	return (
@@ -48,7 +57,7 @@ const Sidebar = (props) => {
 								loading={props.loading}
 								isCollapsable={isCollapsable[index]}
 								index={index}
-								clicked={(index) => {
+								clickedTrigger={(index) => {
 									updateIndex(index);
 								}}
 							/>

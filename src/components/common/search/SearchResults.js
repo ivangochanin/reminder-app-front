@@ -8,7 +8,7 @@ const SearchResults = ({ items, onSelect }) => {
 		<Wrapper>
 			{items.map((item, index) => (
 				<li key={index} onClick={() => onSelect(item)}>
-					<NavLink to={`${item.subcategory.category.slug}/${item.slug}`}>
+					<NavLink to={`${item.subcategory.category.slug}/${item.subcategory.slug}/${item.slug}`}>
 						<span>{item.name}</span>
 						<Details>
 							<span>{item.subcategory.category.name}</span>

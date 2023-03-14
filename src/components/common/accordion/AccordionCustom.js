@@ -7,14 +7,14 @@ const AccordionCustom = (props) => {
 		<Wrapper>
 			<div className="accordion">
 				<div className="accordion-item">
-					<Trigger onClick={() => props.clicked(props.index)}>
+					<Trigger onClick={() => props.clickedTrigger(props.index)}>
 						{props.item.name}
 					</Trigger>
 
 					{props.isCollapsable && (
 						<AllLinks>
 							{props.item.reminders.map((item, index) => (
-								<NavLink to={`${item.slug}`} key={index}>
+								<NavLink to={`${props.item.slug}/${item.slug}`} key={index}>
 									{item.name}
 								</NavLink>
 							))}

@@ -35,7 +35,7 @@ function App() {
 					<Routes>
 						<Route path="/" element={<Home />} exact={true} />
 						<Route path=":slug" element={<Reminders />}>
-							<Route path=":reminderSlug" element={<Reminder />} />
+							<Route path=":subcategorySlug/:reminderSlug" element={<Reminder />} />
 						</Route>
 						<Route path="*" element={<Error />} />
 					</Routes>
