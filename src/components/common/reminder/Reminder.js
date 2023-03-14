@@ -44,14 +44,20 @@ const Reminder = () => {
 export default Reminder;
 
 const Wrapper = styled.div`
-	padding: 0 50px;
+	padding: 0 0 50px 50px;
 	color: ${color.black};
 	h1 {
 		font-size: 40px;
 		font-weight: 400;
 	}
 	pre {
-		margin-top: 50px;
+		margin: 5px 0 20px;
+	}
+
+	blockquote {
+		background: ${color.yellowLight};
+		padding: 10px;
+		border-left: 10px solid ${color.yellow};
 	}
 
 	img {
@@ -65,5 +71,9 @@ const Wrapper = styled.div`
 
 	p {
 		line-height: 25px;
+	}
+
+	ul {
+		padding: 20px 0 20px 40px;
 	}
 `;

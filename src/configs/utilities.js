@@ -22,7 +22,8 @@ export const color = {
   purple: '#8a3fb0',
   link: '#0000EE',
   red: '#E35151',
-  yellow: '#feb92c',
+  yellow: '#FEB92C',
+  yellowLight: '#FFFDF0',
   brown: '#D8A012'
 }
 

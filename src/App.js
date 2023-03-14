@@ -2,10 +2,11 @@ import React, { useState, useEffect, useRef } from 'react';
 import styled from 'styled-components';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { showContainer } from './configs/animations';
-import { LayoutWrapper } from './components/utils/Wrappers';
+import { LayoutWrapper } from './components/common/wrappers/Wrappers';
 import Navbar from './components/layout/navbar/Navbar';
 import { Home, Reminders, Error } from './pages';
 import Reminder from './components/common/reminder/Reminder';
+import Footer from './components/layout/Footer';
 
 function App() {
 	const [playAnimation, setPlayAnimation] = useState(false);
@@ -15,7 +16,6 @@ function App() {
 		const onPageLoad = () => {
 			setPlayAnimation(true);
 		};
-
 		if (document.readyState === 'complete') {
 			onPageLoad();
 		} else {
@@ -40,6 +40,7 @@ function App() {
 						<Route path="*" element={<Error />} />
 					</Routes>
 				</AnimationWrapper>
+				<Footer />
 			</LayoutWrapper>
 		</BrowserRouter>
 	);

@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { breakpoint, color } from '../configs/utilities';
-import { ViewWrapper } from '../components/utils/Wrappers';
+import ViewWrapper from '../components/common/wrappers/ViewWrapper';
 
 const Home = () => {
 	return (
